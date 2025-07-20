@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./HomePage.jsx";
 import ProfilesPage from "./ProfilesPage.jsx";
 import NotFoundPage from "./NotFoundPage.jsx";
+import ProfilePage from "./ProfilePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,12 @@ const router = createBrowserRouter([
   {
     path: "/profiles",
     element: <ProfilesPage />,
+    children: [
+      {
+        path: "/profiles/:profileId",
+        element: <ProfilePage />,
+      },
+    ],
   },
 ]);
 
